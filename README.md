@@ -1,8 +1,48 @@
 # ProgramaticFragment
 
+    
+Programatically Creating a custom Fragment and added in Custom View Pager.   
+    
+    
+    
+    
+    ArrayList<String> al = new ArrayList<String>();
+    private SectionsStatePagerAdapter mSectionStatePAgeAdapter;
+    private CustomViewPager mViewPager;
+        
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        mSectionStatePAgeAdapter = new SectionsStatePagerAdapter(getSupportFragmentManager());
+        mViewPager =  findViewById(R.id.viewpager);
 
 
-public void containerTabs(){
+        addInList();
+        containerTabs();
+
+
+//
+
+
+    }
+
+
+    public void addInList(){
+        al = new ArrayList<String>();
+        al.add("TAB 1");
+        al.add("TAB 2");
+        al.add("TAB 3");
+        al.add("TAB 4");
+        al.add("TAB 5");
+        al.add("TAB 6");
+        al.add("TAB 7");
+
+    }
+    
+    
+    public void containerTabs(){
         SectionsStatePagerAdapter adapter = new SectionsStatePagerAdapter(getSupportFragmentManager());
         for (int i = 0; i < al.size(); i++) {
 
@@ -51,3 +91,8 @@ public void containerTabs(){
         mViewPager.setAdapter(adapter);
         mViewPager.setPagingEnabled(false);
     }
+    
+
+
+
+              
